@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music | DAMWOL</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="subpage">
+    <div class="site-top-sticky">
+        <header class="header">
+            <div class="container header-inner">
+                <a href="index.html" class="logo">DAMWOL</a>
+                <nav class="menu"><a href="index.html">Home</a><a href="artist.html">Artist</a><a href="music.html">Music</a></nav>
+                <button class="btn-menu" id="btn-menu" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <nav class="side-menu" id="side-menu"><a href="index.html">Home</a><a href="artist.html">Artist</a><a href="music.html">Music</a></nav>
+        </header>
+    </div>
+    <main>
+        <section class="music music-player-page">
+            <div class="container">
+                <!-- Add another .album-player block here to add a release. -->
+                <article class="album-player" data-album-player data-title="선을 넘어서" style="--cover-image: url('assets/albums/선을 넘어서.png');">
+                    <div class="album-controls album-controls-floating">
+                        <button class="album-play-button" type="button" data-album-toggle aria-pressed="false" aria-label="선을 넘어서 재생">
+                            <i class="fa-solid fa-play" aria-hidden="true"></i>
+                            <span>재생</span>
+                        </button>
+                        <div class="album-timeline">
+                            <input class="album-progress" data-album-progress type="range" min="0" max="0" value="0" step="0.1" aria-label="선을 넘어서 재생 위치">
+                            <div class="album-times"><span data-current-time>0:00</span><span data-duration>0:00</span></div>
+                        </div>
+                    </div>
+                    <div class="album-stage">
+                        <div class="album-object">
+                            <div class="album-disc-shell" aria-hidden="true">
+                                <div class="album-disc"><span></span></div>
+                            </div>
+                            <button class="album-cover" type="button" data-album-toggle aria-pressed="false" aria-label="선을 넘어서 재생">
+                                <img src="assets/albums/선을 넘어서.png" alt="선을 넘어서 앨범 커버">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="album-details">
+                        <h1>선을 넘어서</h1>
+                        <p class="album-kicker">SINGLE · 2026</p>
+                    </div>
+                    <audio data-album-audio preload="metadata">
+                        <source src="assets/albums/선을 넘어가.mp3" type="audio/mpeg">
+                    </audio>
+                </article>
+            </div>
+        </section>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

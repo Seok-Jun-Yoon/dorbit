@@ -11,40 +11,73 @@ if (menuBtn && sideMenu) {
     });
 }
 
-const heroVideo = document.querySelector(".hero-video");
-const soundButton = document.getElementById("hero-sound");
-const heroBackground = document.querySelector(".hero-background");
-const videoButton = document.getElementById("show-video");
-const imageButton = document.getElementById("show-image");
+const albumPlayers = [...document.querySelectorAll("[data-album-player]")];
+const musicPlayerPage = document.querySelector(".music-player-page");
 
-if (heroVideo && soundButton) {
-    soundButton.addEventListener("click", () => {
-        heroVideo.muted = !heroVideo.muted;
-        const isMuted = heroVideo.muted;
-        soundButton.setAttribute("aria-pressed", String(!isMuted));
-        soundButton.setAttribute("aria-label", isMuted ? "영상 소리 켜기" : "영상 소리 끄기");
-        soundButton.innerHTML = isMuted
-            ? '<i class="fa-solid fa-volume-xmark" aria-hidden="true"></i><span>Sound off</span>'
-            : '<i class="fa-solid fa-volume-high" aria-hidden="true"></i><span>Sound on</span>';
-    });
-}
+const formatTime = (seconds) => {
+    if (!Number.isFinite(seconds)) return "0:00";
+    const minutes = Math.floor(seconds / 60);
+    const remainder = Math.floor(seconds % 60).toString().padStart(2, "0");
+    return `${minutes}:${remainder}`;
+};
 
-if (heroVideo && heroBackground && videoButton && imageButton) {
-    const setVisualMode = (mode) => {
-        const isStill = mode === "image";
-        heroBackground.classList.toggle("show-still", isStill);
-        videoButton.classList.toggle("is-active", !isStill);
-        imageButton.classList.toggle("is-active", isStill);
-        videoButton.setAttribute("aria-pressed", String(!isStill));
-        imageButton.setAttribute("aria-pressed", String(isStill));
+albumPlayers.forEach((player) => {
+    const title = player.dataset.title || "앨범";
+    const audio = player.querySelector("[data-album-audio]");
+    const toggles = player.querySelectorAll("[data-album-toggle]");
+    const progress = player.querySelector("[data-album-progress]");
+    const currentTime = player.querySelector("[data-current-time]");
+    const duration = player.querySelector("[data-duration]");
+    const playButton = player.querySelector(".album-play-button");
 
-        if (isStill) {
-            heroVideo.pause();
-        } else {
-            heroVideo.play().catch(() => {});
+    const updateState = (isPlaying) => {
+        player.classList.toggle("is-playing", isPlaying);
+        musicPlayerPage?.classList.toggle("is-album-playing", albumPlayers.some((album) => album.classList.contains("is-playing")));
+        toggles.forEach((toggle) => {
+            toggle.setAttribute("aria-pressed", String(isPlaying));
+            toggle.setAttribute("aria-label", isPlaying ? `${title} 일시정지` : `${title} 재생`);
+        });
+        if (playButton) {
+            playButton.innerHTML = isPlaying
+                ? '<i class="fa-solid fa-pause" aria-hidden="true"></i><span>일시정지</span>'
+                : '<i class="fa-solid fa-play" aria-hidden="true"></i><span>재생</span>';
         }
     };
 
-    videoButton.addEventListener("click", () => setVisualMode("video"));
-    imageButton.addEventListener("click", () => setVisualMode("image"));
-}
+    const pauseOtherAlbums = () => {
+        albumPlayers.forEach((otherPlayer) => {
+            if (otherPlayer === player) return;
+            const otherAudio = otherPlayer.querySelector("[data-album-audio]");
+            if (otherAudio && !otherAudio.paused) otherAudio.pause();
+        });
+    };
+
+    const togglePlayback = () => {
+        if (audio.paused) {
+            pauseOtherAlbums();
+            audio.play().catch(() => updateState(false));
+        } else {
+            audio.pause();
+        }
+    };
+
+    toggles.forEach((toggle) => toggle.addEventListener("click", togglePlayback));
+
+    audio.addEventListener("play", () => {
+        pauseOtherAlbums();
+        updateState(true);
+    });
+    audio.addEventListener("pause", () => updateState(false));
+    audio.addEventListener("ended", () => updateState(false));
+    audio.addEventListener("loadedmetadata", () => {
+        progress.max = String(audio.duration || 0);
+        duration.textContent = formatTime(audio.duration);
+    });
+    audio.addEventListener("timeupdate", () => {
+        progress.value = String(audio.currentTime);
+        currentTime.textContent = formatTime(audio.currentTime);
+    });
+    progress.addEventListener("input", () => {
+        audio.currentTime = Number(progress.value);
+    });
+});

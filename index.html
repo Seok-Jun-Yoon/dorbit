@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>WOLDAM | Electronic Press Kit</title>
-    <meta name="description" content="Landing page template / EPK for a band or musical artist. Portfolio demo built by Pablo Gonzalez.">
+    <meta name="description" content="DAMWOL 공식 웹사이트">
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -14,158 +15,44 @@
     <div class="site-top-sticky">
         <header class="header">
             <div class="container header-inner">
-                <a href="#home" class="logo">WOLDAM</a>
+                <a href="#home" class="logo">DAMWOL</a>
                 <nav class="menu">
                     <a href="#home">Home</a>
-                    <a href="#music">Music</a>
-                    <a href="#tour">Tour</a>
-                    <a href="#contact">Contact</a>
+                    <a href="artist.html">Artist</a>
+                    <a href="music.html">Music</a>
                 </nav>
-                <a href="mailto:booking@greyfield-demo.example?subject=Booking%20Inquiry" class="btn btn-dark nav-cta">Booking Inquiries</a>
                 <button class="btn-menu" id="btn-menu" aria-label="Open menu">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
             <nav class="side-menu" id="side-menu">
                 <a href="#home">Home</a>
-                <a href="#music">Music</a>
-                <a href="#tour">Tour</a>
-                <a href="#contact">Contact</a>
+                <a href="artist.html">Artist</a>
+                <a href="music.html">Music</a>
             </nav>
         </header>
     </div>
 
     <main>
         <section class="hero" id="home">
-            <div class="container hero-inner">
-                <h1>WOLDAM</h1>
-                <div class="hero-btns">
-                    <a href="#music" class="btn btn-dark">Listen Now</a>
-                    <a href="#tour" class="btn btn-outline">Tour Dates</a>
-                </div>
-                <div class="hero-socials">
-                    <a href="#" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
-                    <a href="#" aria-label="Apple Music"><i class="fa-brands fa-itunes-note"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
             <div class="hero-background" aria-hidden="true">
-                <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/dormitory.png">
-                    <source src="assets/video/hero.mp4" type="video/mp4">
-                </video>
-                <img class="hero-still" src="assets/dormitory.png" alt="">
+                <img src="assets/배경.png" alt="">
             </div>
-            <button class="hero-sound" id="hero-sound" type="button" aria-pressed="false" aria-label="영상 소리 켜기">
-                <i class="fa-solid fa-volume-xmark" aria-hidden="true"></i>
-                <span>Sound off</span>
-            </button>
-            <div class="hero-visual-switcher" aria-label="메인 비주얼 선택">
-                <button class="hero-visual-button is-active" id="show-video" type="button" aria-pressed="true" aria-label="메인 영상 보기" title="영상 보기">
-                    <i class="fa-solid fa-play" aria-hidden="true"></i>
-                </button>
-                <button class="hero-visual-button" id="show-image" type="button" aria-pressed="false" aria-label="기숙사 이미지 보기" title="이미지 보기">
-                    <i class="fa-regular fa-image" aria-hidden="true"></i>
-                </button>
+            <div class="hero-socials hero-socials-bottom">
+                <a href="#" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+                <a href="#" aria-label="Apple Music"><i class="fa-brands fa-itunes-note"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@DAMWOL_official" target="_blank" rel="noopener noreferrer" aria-label="DAMWOL 공식 YouTube 채널"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </section>
 
-        <section class="bio" id="bio">
-            <div class="container bio-inner">
-                <div class="bio-photo">
-                    <img src="assets/2.png" alt="월담(WOLDAM) 프로필 이미지">
-                </div>
-                <div class="bio-text">
-                    <p class="eyebrow">Biography</p>
-                    <h2>About WOLDAM</h2>
-                    <p>월담(WOLDAM)은 한국 전통 설화 속 다섯 영물, 구미호·삼족오·해태·달토끼·이무기로 이루어진 5인조 버츄얼 아이돌 그룹이다. 저마다의 사명을 지키며 영원에 가까운 시간을 살아온 이들은 인간 세상에서 흘러나온 음악에 매료되어, 각자의 운명을 뒤로하고 새로운 무대를 향한 여정을 시작한다.</p>
-                    <p>한국 전통의 신비로운 세계관을 바탕으로 현대적인 K-POP 사운드와 다채로운 퍼포먼스를 선보이는 월담은, 과거와 현재, 환상과 현실의 경계를 넘나든다. 인간의 기쁨과 슬픔, 사랑과 이별을 음악으로 이해하고 표현하며, 오래된 설화 속 존재들이 오늘날의 무대 위에서 새로운 이야기를 써 내려간다.</p>
-                    <div class="genre-tags">
-                        <span class="genre-tag">Kpop</span>
-                        <span class="genre-tag">Virtual</span>
-                        <span class="genre-tag">Dream Pop</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="music" id="music">
+        <section class="teaser" aria-label="Teaser">
             <div class="container">
                 <div class="section-title">
-                    <p class="eyebrow">Discography</p>
-                    <h2>Music</h2>
+                    <p class="eyebrow">Teaser</p>
                 </div>
-                <div class="music-grid">
-                    <div class="track-card">
-                        <div class="track-art"><img src="assets/albums/1.png" alt="DAMDAM 앨범 커버"></div>
-                        <h3>DAMDAM</h3>
-                        <p class="track-meta">Single · 2026</p>
-                        <div class="track-links">
-                            <a href="#"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                            <a href="#"><i class="fa-brands fa-itunes-note"></i> Apple Music</a>
-                        </div>
-                    </div>
-                    <div class="track-card">
-                        <div class="track-art"><img src="assets/albums/2.png" alt="Weather 앨범 커버"></div>
-                        <h3>Weather</h3>
-                        <p class="track-meta">EP · 2026</p>
-                        <div class="track-links">
-                            <a href="#"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                            <a href="#"><i class="fa-brands fa-itunes-note"></i> Apple Music</a>
-                        </div>
-                    </div>
-                    <div class="track-card">
-                        <div class="track-art"><img src="assets/albums/3.png" alt="MoonGrow 앨범 커버"></div>
-                        <h3>MoonGrow</h3>
-                        <p class="track-meta">Single · 2026</p>
-                        <div class="track-links">
-                            <a href="#"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                            <a href="#"><i class="fa-brands fa-itunes-note"></i> Apple Music</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="tour" id="tour">
-            <div class="container">
-                <div class="section-title">
-                    <p class="eyebrow">Live</p>
-                    <h2>Tour Dates</h2>
-                </div>
-                <div class="tour-list">
-                    <div class="tour-row">
-                        <div class="tour-date"><span>SEP</span><strong>12</strong></div>
-                        <div class="tour-info">
-                            <h4>The Regent Room</h4>
-                            <p>Austin, TX</p>
-                        </div>
-                        <a href="#" class="btn btn-outline btn-sm">Tickets</a>
-                    </div>
-                    <div class="tour-row">
-                        <div class="tour-date"><span>SEP</span><strong>19</strong></div>
-                        <div class="tour-info">
-                            <h4>Mercury Hall</h4>
-                            <p>Denver, CO</p>
-                        </div>
-                        <a href="#" class="btn btn-outline btn-sm">Tickets</a>
-                    </div>
-                    <div class="tour-row">
-                        <div class="tour-date"><span>SEP</span><strong>27</strong></div>
-                        <div class="tour-info">
-                            <h4>Kingsley Theater</h4>
-                            <p>Portland, OR</p>
-                        </div>
-                        <a href="#" class="btn btn-outline btn-sm">Tickets</a>
-                    </div>
-                    <div class="tour-row">
-                        <div class="tour-date"><span>OCT</span><strong>04</strong></div>
-                        <div class="tour-info">
-                            <h4>The Lowline</h4>
-                            <p>Chicago, IL</p>
-                        </div>
-                        <a href="#" class="btn btn-outline btn-sm">Tickets</a>
-                    </div>
+                <div class="teaser-video">
+                    <iframe src="https://www.youtube-nocookie.com/embed/hTz7bEuhVc4?rel=0" title="WOLDAM Teaser" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
@@ -200,80 +87,17 @@
             </div>
         </section>
 
-        <section class="gallery" id="members">
-            <div class="container">
-                <div class="section-title">
-                    <p class="eyebrow">Members</p>
-                    <h2>Meet WOLDAM</h2>
-                </div>
-                <div class="gallery-grid">
-                    <a class="gallery-item member-card" href="members/ruon.html" aria-label="루온 상세 프로필 열기">
-                        <img src="assets/members/루온.png" alt="루온">
-                        <span class="member-card-name">루온</span>
-                        <span class="member-card-cta">Profile <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
-                    </a>
-                    <a class="gallery-item member-card" href="members/ryuhyun.html" aria-label="류현 상세 프로필 열기">
-                        <img src="assets/members/류현.png" alt="류현">
-                        <span class="member-card-name">류현</span>
-                        <span class="member-card-cta">Profile <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
-                    </a>
-                    <a class="gallery-item member-card" href="members/seorin.html" aria-label="서린 상세 프로필 열기">
-                        <img src="assets/members/서린.png" alt="서린">
-                        <span class="member-card-name">서린</span>
-                        <span class="member-card-cta">Profile <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
-                    </a>
-                    <a class="gallery-item member-card" href="members/yulgyeom.html" aria-label="율겸 상세 프로필 열기">
-                        <img src="assets/members/율겸.png" alt="율겸">
-                        <span class="member-card-name">율겸</span>
-                        <span class="member-card-cta">Profile <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
-                    </a>
-                    <a class="gallery-item member-card" href="members/taehwi.html" aria-label="태휘 상세 프로필 열기">
-                        <img src="assets/members/태휘.png" alt="태휘">
-                        <span class="member-card-name">태휘</span>
-                        <span class="member-card-cta">Profile <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact" id="contact">
-            <div class="container contact-inner">
-                <div class="section-title left">
-                    <p class="eyebrow">Get In Touch</p>
-                    <h2>Booking &amp; Press</h2>
-                </div>
-                <div class="contact-grid">
-                    <div class="contact-block">
-                        <h4>Booking</h4>
-                        <p><a href="mailto:booking@greyfield-demo.example">booking@greyfield-demo.example</a></p>
-                    </div>
-                    <div class="contact-block">
-                        <h4>Press &amp; Media</h4>
-                        <p><a href="mailto:press@greyfield-demo.example">press@greyfield-demo.example</a></p>
-                    </div>
-                    <div class="contact-block">
-                        <h4>Management</h4>
-                        <p>Represented by Silverline Artist Management</p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="footer">
         <div class="container footer-inner">
-            <div class="footer-brand">GREYFIELD</div>
+            <div class="footer-brand">DAMWOL</div>
             <div class="footer-socials">
                 <a href="#" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
                 <a href="#" aria-label="Apple Music"><i class="fa-brands fa-itunes-note"></i></a>
                 <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>
-            <p class="footer-credit">
-                Landing page demo by
-                <a href="https://github.com/pagonzalezmald" target="_blank">Pablo Gonzalez</a>
-                · <a href="https://github.com/pagonzalezmald/landing-music-epk-demo" target="_blank">View code on GitHub</a>
-            </p>
         </div>
     </footer>
 
