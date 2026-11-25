@@ -9,13 +9,13 @@ a { color: inherit; text-decoration: none; }
 .wordmark { font: 700 21px/1 "Space Grotesk", sans-serif; letter-spacing: .14em; }
 .back-link { padding: 10px 0; color: #4d4b48; }
 .profile-hero { min-height: calc(100svh - 74px); display: grid; grid-template-columns: minmax(360px, .95fr) 1.05fr; border-bottom: 1px solid var(--line); }
-.portrait-panel { position: relative; min-height: 650px; overflow: hidden; background: #d8d4cb; }
+.portrait-panel { position: relative; min-height: 650px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #EAE6E4; }
 .portrait-panel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.16)); pointer-events: none; }
-.portrait-panel img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.portrait-panel img { display: block; width: min(88%, 560px); height: auto; max-height: calc(100% - 48px); object-fit: contain; }
 .portrait-index { position: absolute; z-index: 1; top: 26px; left: 28px; margin: 0; color: #fff; font: 500 11px/1 "DM Mono", monospace; letter-spacing: .12em; }
-.intro-panel { align-self: center; padding: clamp(55px, 8vw, 130px); }
+.intro-panel { align-self: start; padding: clamp(42px, 5vw, 76px) clamp(55px, 8vw, 130px); }
 .eyebrow, .section-label { font: 500 11px/1.4 "DM Mono", monospace; color: var(--accent); letter-spacing: .1em; }
-h1 { margin: 19px 0 34px; font: 600 clamp(65px, 9vw, 142px)/.78 "Noto Serif KR", serif; letter-spacing: -.07em; }
+h1 { margin: 19px 0 34px; font: 600 clamp(52px, 7.2vw, 114px)/.78 "Noto Serif KR", serif; letter-spacing: -.07em; }
 h1 span { display: block; margin-top: 24px; font: 500 13px/1 "DM Mono", monospace; letter-spacing: .19em; }
 .lead { margin: 0; font-size: clamp(18px, 2vw, 25px); line-height: 1.8; letter-spacing: -.04em; }
 .quote { margin: 44px 0; padding-left: 18px; border-left: 2px solid var(--accent); color: #55514d; font-size: 15px; line-height: 1.9; }
@@ -23,8 +23,13 @@ h1 span { display: block; margin-top: 24px; font: 500 13px/1 "DM Mono", monospac
 .profile-facts div { padding: 17px 0; border-bottom: 1px solid var(--line); }
 .profile-facts div:nth-child(odd) { padding-right: 18px; }.profile-facts div:nth-child(even) { padding-left: 18px; border-left: 1px solid var(--line); }
 dt { margin-bottom: 7px; font: 500 10px/1 "DM Mono", monospace; color: var(--muted); letter-spacing: .1em; } dd { margin: 0; font-size: 13px; }
+.taehwi-companion { width: min(46%, 240px); margin: 26px 0 0 auto; }.taehwi-companion img { display: block; width: 100%; height: auto; }
+.ruon-companion { width: min(46%, 240px); margin: 26px 0 0; }.ruon-companion img { display: block; width: 100%; height: auto; }
+.seorin-companion { width: min(46%, 240px); margin: 26px 0 0 auto; }.seorin-companion img { display: block; width: 100%; height: auto; }
+.ryuhyun-companion { width: min(46%, 240px); margin: 36px 12% 0 auto; }.ryuhyun-companion img { display: block; width: 100%; height: auto; }
+.yulgyeom-companion { width: min(46%, 240px); margin: 46px 24% 0 auto; }.yulgyeom-companion img { display: block; width: 100%; height: auto; }
 .story-section { display: grid; grid-template-columns: minmax(180px, .6fr) minmax(0, 1.4fr); gap: 10vw; padding: clamp(70px, 11vw, 170px) clamp(22px, 12vw, 200px); }
 .story-section-alt { background: var(--ink); color: #f5f3ee; }.story-section-alt .section-label { color: #e28b7f; }
 .section-label span { display: inline-block; width: 42px; }.story-copy { max-width: 690px; }.story-copy h2 { margin: 0 0 40px; font-size: clamp(31px, 4vw, 59px); line-height: 1.3; letter-spacing: -.07em; }.story-copy p { margin: 0 0 22px; color: #4f4d49; font-size: 16px; line-height: 2; word-break: keep-all; }.story-section-alt .story-copy p { color: #c6c1ba; }
 footer { padding: 30px 22px; background: var(--ink); color: #9d9b98; text-align: center; font: 10px/1 "DM Mono", monospace; letter-spacing: .1em; }
-@media (max-width: 760px) { .profile-hero, .story-section { grid-template-columns: 1fr; }.portrait-panel { min-height: 580px; }.intro-panel { padding: 64px 28px 72px; }.story-section { gap: 36px; padding: 76px 28px; }.story-copy h2 { margin-bottom: 28px; }.profile-facts { grid-template-columns: 1fr; }.profile-facts div:nth-child(even) { padding-left: 0; border-left: 0; }.profile-facts div:nth-child(odd) { padding-right: 0; } }
+@media (max-width: 760px) { .profile-hero, .story-section { grid-template-columns: 1fr; }.portrait-panel { min-height: 580px; }.portrait-panel img { width: min(84%, 470px); max-height: calc(100% - 48px); }.intro-panel { padding: 48px 28px 72px; }.taehwi-companion, .ruon-companion, .seorin-companion, .ryuhyun-companion, .yulgyeom-companion { width: min(52%, 240px); }.ryuhyun-companion { margin-right: 8%; }.yulgyeom-companion { margin-right: 16%; }.story-section { gap: 36px; padding: 76px 28px; }.story-copy h2 { margin-bottom: 28px; }.profile-facts { grid-template-columns: 1fr; }.profile-facts div:nth-child(even) { padding-left: 0; border-left: 0; }.profile-facts div:nth-child(odd) { padding-right: 0; } }
